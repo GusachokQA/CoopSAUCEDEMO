@@ -70,9 +70,7 @@ public class MainPageTest {
         FinishPage finishPage = new FinishPage(driver);
         Assert.assertTrue(finishPage.isPageOpened(), "FinishPage page has not been opened");
 
-        finishPage.thankYou();
-
-        Assert.assertEquals(driver.findElement(By.tagName("h2")).getText(),
+        Assert.assertEquals(finishPage.getThankYouText(),
                 "THANK YOU FOR YOUR ORDER", "Что-то пошло не так!!!");
     }
 

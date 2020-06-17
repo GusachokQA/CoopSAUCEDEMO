@@ -2,6 +2,7 @@ package pageObject.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class FinishPage {
     private WebDriver driver;
@@ -17,7 +18,8 @@ public class FinishPage {
         return driver.findElement(FIFNSHSELECTOR).isDisplayed();
     }
 
-    public boolean thankYou(){
-        return driver.findElement(THANKYOUSELECTOR).isDisplayed();
+    public String getThankYouText(){
+        return driver.findElement(THANKYOUSELECTOR).getText();
     }
+
 }
