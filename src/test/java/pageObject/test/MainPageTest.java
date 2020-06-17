@@ -55,16 +55,12 @@ public class MainPageTest {
 
         //OverviewPage
         OverviewPage overviewPage = new OverviewPage(driver);
+
         Assert.assertTrue(overviewPage.isPageOpened(), "Overview page has not been opened");
-
-        Assert.assertEquals(driver.findElements(By.className("cart_item")).size(), 1, "Количетсво добавленных элементов не равно 1");
-
-        overviewPage.shippingInformation();
+        Assert.assertEquals(overviewPage.getQuantityCount(), "1", "Количетсво добавленных элементов не равно 1");
+        Assert.assertEquals(overviewPage.getValueLabel(), "FREE PONY EXPRESS DELIVERY!", "Что-то пошло не так!!!");
 
         overviewPage.finishButton();
-
-        //Assert.assertTrue(driver.findElement(By.xpath("//div[text() = 'FREE PONY EXPRESS DELIVERY!']")).isDisplayed(), "Текст отсутствует.");
-        //driver.findElement(By.cssSelector(".btn_action.cart_button")).click();
 
         //FinishPage
         FinishPage finishPage = new FinishPage(driver);

@@ -23,7 +23,6 @@ public class YourCartPage {
     public String getQuantityCount(){
         WebElement cartQuantity = driver.findElement(QUANTITYSELECTOR);
         return cartQuantity.getText();
-
     }
 
     public void checkOutButton(){
