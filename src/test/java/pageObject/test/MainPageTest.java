@@ -122,23 +122,6 @@ public class MainPageTest {
 
         Assert.assertEquals(finishPage.getThankYouText(),
                 "THANK YOU FOR YOUR ORDER", "Что-то пошло не так!!!");
-
-        //driver.get("https://www.saucedemo.com/cart.html");
-
-        //Assert.assertEquals(driver.findElements(By.className("cart_item")).size(), 2, "Количетсво добавленных элементов не равно 1");
-
-        //driver.findElement(By.className("checkout_button")).click();
-        //driver.findElement(By.id("first-name")).sendKeys("Alex");
-        //driver.findElement(By.id("last-name")).sendKeys("Trostyanko");
-        //driver.findElement(By.id("postal-code")).sendKeys("220000");
-        //driver.findElement(By.xpath("//input[@type='submit']")).click();
-
-        //Assert.assertEquals(driver.findElements(By.className("cart_item")).size(), 2, "Количетсво добавленных элементов не равно 1");
-        //Assert.assertTrue(driver.findElement(By.xpath("//div[text() = 'FREE PONY EXPRESS DELIVERY!']")).isDisplayed(), "Текст отсутствует.");
-        //river.findElement(By.cssSelector(".btn_action.cart_button")).click();
-
-        //Assert.assertEquals(driver.findElement(By.tagName("h2")).getText(),
-         //       "THANK YOU FOR YOUR ORDER", "Что-то пошло не так!!!");
     }
 
     @AfterMethod
