@@ -20,9 +20,9 @@ public class OverviewPage {
         return driver.findElement(OVERWIEWSELECTOR).isDisplayed();
     }
 
-    public String getQuantityCount(){
-        WebElement cartSelectedCount = driver.findElement(CARTCOUNTSELECTION);
-        return cartSelectedCount.getText();
+    public int getQuantityCount(){
+        //WebElement cartSelectedCount = driver.findElement(CARTCOUNTSELECTION);
+        return driver.findElements(CARTCOUNTSELECTION).size();
     }
 
     public String getValueLabel(){

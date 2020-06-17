@@ -20,9 +20,8 @@ public class YourCartPage {
         return driver.findElement(YOURCARTSELECTOR).isDisplayed();
     }
 
-    public String getQuantityCount(){
-        WebElement cartQuantity = driver.findElement(QUANTITYSELECTOR);
-        return cartQuantity.getText();
+    public int getQuantityCount(){
+        return driver.findElements(QUANTITYSELECTOR).size();
     }
 
     public void checkOutButton(){
