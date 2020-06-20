@@ -9,13 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObject.pages.*;
 
-public class MainPageTest {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-    }
+public class MainPageTest extends BaseTest {
 
     @Test
     public void test1() {
@@ -122,10 +116,5 @@ public class MainPageTest {
 
         Assert.assertEquals(finishPage.getThankYouText(),
                 "THANK YOU FOR YOUR ORDER", "Что-то пошло не так!!!");
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
     }
 }

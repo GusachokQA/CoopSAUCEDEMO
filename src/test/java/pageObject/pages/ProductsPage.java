@@ -4,18 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductsPage {
-    private WebDriver driver;
+public class ProductsPage extends BasePage{
 
     private By PRODUCTSELECTOR = By.className("product_label");
     private By CARTCOUNTICONSELECTOR = By.cssSelector(".fa-layers-counter.shopping_cart_badge");
 
     private String itemIdentificator = "//div[text()='replace']/ancestor::div[@class='inventory_item']";
     private String itemButtonIdentificator = itemIdentificator + "/descendant::button";
-    private String itemPriceIdentificator = itemIdentificator + "/descendant::div[@class = 'inventory_item_price']";
+    private String itemNameIdentificator = itemIdentificator + "/descendant::div[@class = 'inventory_item_name']";
 
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isPageOpened() {
@@ -28,15 +27,21 @@ public class ProductsPage {
         addCartButton.click();
     }
 
-    public String getPrice(String name) {
-        String tmpItemPriceIdentificator = itemPriceIdentificator.replace("replace", name);
-        WebElement price = driver.findElement(By.xpath(tmpItemPriceIdentificator));
+    public String getCartSelectedName(String name) {
+        String tmpItemNameIdentificator = itemNameIdentificator.replace("replace", name);
+        WebElement selectionName = driver.findElement(By.xpath(tmpItemNameIdentificator));
 
-        return price.getText();
+        return selectionName.getText();
     }
 
     public String getCartSelectedCount() {
         WebElement cartCountIcon = driver.findElement(CARTCOUNTICONSELECTOR);
         return cartCountIcon.getText();
+    }
+
+    public void removeToCart(String name){
+        String tmpItemIdentificator = itemButtonIdentificator.replace("replace", name);
+        WebElement addCartButton = driver.findElement(By.xpath(tmpItemIdentificator));
+        addCartButton.click();
     }
 }
