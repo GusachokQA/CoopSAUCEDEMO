@@ -4,8 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class OverviewPage {
-    private WebDriver driver;
+public class OverviewPage extends BasePage{
 
     private By OVERWIEWSELECTOR = By.xpath("//div[text()='Checkout: Overview']");
     private By SHIPPINGSELECTOR = By.xpath("//div[text()='FREE PONY EXPRESS DELIVERY!']");
@@ -13,7 +12,7 @@ public class OverviewPage {
     private By CARTCOUNTSELECTION = By.cssSelector(".summary_quantity");
 
     public OverviewPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public boolean isPageOpened(){
