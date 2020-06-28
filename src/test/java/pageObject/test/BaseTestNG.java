@@ -3,31 +3,19 @@ package pageObject.test;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 import pageObject.webcore.BrowserService;
-import org.testng.annotations.Listeners;
-
 
 @Listeners(ListenerTest.class)
-public class BaseTest {
+public class BaseTestNG {
     WebDriver driver;
     BrowserService browserService = new BrowserService();
 
-    @BeforeGroups
-    public void beforeGroup(){
-        driver = browserService.initBrowser();
-    }
-
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
         driver = browserService.initBrowser();
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
-        driver.quit();
-    }
-
-    @AfterGroups
-    public void afterGroup(){
         driver.quit();
     }
 }

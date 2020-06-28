@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestParam">
+    <parameter name="username" value="standard_user"></parameter>
+    <parameter name="password" value="secret_sauce"></parameter>
+    <parameter name="usernameError" value="locked_out_user"></parameter>
+    <parameter name="passwordError" value="secret_sauce"></parameter>
+    
+    <test name="ParamRun">
+        <classes>
+            <class name="pageObject.test.TestNGPriority"></class>
+        </classes>
+    </test>
+</suite>
