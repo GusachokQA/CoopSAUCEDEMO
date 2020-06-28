@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel" thread-count="8" parallel="classes">
+    <test name="run">
+        <classes>
+            <class name="pageObject.test.MainPageTest"></class>
+            <class name="pageObject.test.Test1"></class>
+            <class name="pageObject.test.Test2"></class>
+            <class name="pageObject.test.Test3"></class>
+            <class name="pageObject.test.TestNG"></class>
+            <class name="pageObject.test.TestNGPriority"></class>
+            <class name="pageObject.test.FactoryAnnotation"></class>
+        </classes>
+    </test>
+</suite>
